@@ -1,0 +1,19 @@
+#!/bin/bash -e
+
+# Enters a docker running Debian 12 Bookworm
+# Any arguments are run in the docker, or if no arguments it runs a shell
+
+export TAG=debian-bookworm-armdev
+SCRIPTPATH=$(readlink -f "$0")
+DOCKERPATH=docker-debian-bookworm-armhf/
+
+DOCKER_BUILDKIT=1 docker build --tag "$TAG" "$DOCKERPATH" --quiet
+
+exec docker run --rm \
+	-it \
+	--volume "$(pwd)":/work \
+	--user $(id -g):$(id -u) \
+	-w /work \
+	-e HOME=/tmp \
+	"$TAG" \
+	$@;
