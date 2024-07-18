@@ -534,6 +534,87 @@
 
 				#address-cells = <0x1>;
 				#size-cells = <0x1>;
+
+				/* TS-IRIDIUM */
+				ts16550@3a8 {
+					compatible = "technologic,ts16550";
+
+					reg = <0x3a8 8>;
+					interrupt-parent = <&fpga_intc>;
+					interrupts = <14 IRQ_TYPE_LEVEL_HIGH>; // IRQ 5
+				};
+
+				/* LOWER TS-SER4 COM A */
+				ts16550@3f8 {
+					compatible = "technologic,ts16550";
+
+					reg = <0x3f8 8>;
+					interrupt-parent = <&fpga_intc>;
+					interrupts = <15 IRQ_TYPE_LEVEL_HIGH>; // IRQ 6
+				};
+
+				/* LOWER TS-SER4 COM B */
+				ts16550@2f8 {
+					compatible = "technologic,ts16550";
+
+					reg = <0x2f8 8>;
+					interrupt-parent = <&fpga_intc>;
+					interrupts = <15 IRQ_TYPE_LEVEL_HIGH>; // IRQ 6
+				};
+
+				/* LOWER TS-SER4 COM C */
+				ts16550@3e8 {
+					compatible = "technologic,ts16550";
+
+					reg = <0x3e8 8>;
+					interrupt-parent = <&fpga_intc>;
+					interrupts = <15 IRQ_TYPE_LEVEL_HIGH>; // IRQ 6
+				};
+
+				/* LOWER TS-SER4 COM D */
+				ts16550@2e8 {
+					compatible = "technologic,ts16550";
+
+					reg = <0x2e8 8>;
+					interrupt-parent = <&fpga_intc>;
+					interrupts = <15 IRQ_TYPE_LEVEL_HIGH>; // IRQ 6
+				};
+
+				/* HIGHER TS-SER4 COM A */
+				ts16550@2a8 {
+					compatible = "technologic,ts16550";
+
+					reg = <0x2a8 8>;
+					interrupt-parent = <&fpga_intc>;
+					interrupts = <16 IRQ_TYPE_LEVEL_HIGH>; // IRQ 7
+				};
+
+				/* HIGHER TS-SER4 COM B */
+				ts16550@3a0 {
+					compatible = "technologic,ts16550";
+
+					reg = <0x3a0 8>;
+					interrupt-parent = <&fpga_intc>;
+					interrupts = <16 IRQ_TYPE_LEVEL_HIGH>; // IRQ 7
+				};
+
+				/* HIGHER TS-SER4 COM C */
+				ts16550@2a0 {
+					compatible = "technologic,ts16550";
+
+					reg = <0x2a0 8>;
+					interrupt-parent = <&fpga_intc>;
+					interrupts = <16 IRQ_TYPE_LEVEL_HIGH>; // IRQ 7
+				};
+
+				/* HIGHER TS-SER4 COM D */
+				ts16550@398 {
+					compatible = "technologic,ts16550";
+
+					reg = <0x398 8>;
+					interrupt-parent = <&fpga_intc>;
+					interrupts = <16 IRQ_TYPE_LEVEL_HIGH>; // IRQ 7
+				};
 			};
 		};
 
