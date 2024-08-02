@@ -48,9 +48,11 @@ static int tsweim_intc_set_type(struct irq_data *d, unsigned int flow_type)
 
 	switch (flow_type) {
 	case IRQ_TYPE_LEVEL_LOW:
+	case IRQ_TYPE_EDGE_FALLING:
 		polarity |= bit;
 		break;
 	case IRQ_TYPE_LEVEL_HIGH:
+	case IRQ_TYPE_EDGE_RISING:
 		polarity &= ~bit;
 		break;
 	default:
