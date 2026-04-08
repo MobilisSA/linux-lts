@@ -559,6 +559,42 @@
 
 				#address-cells = <0x1>;
 				#size-cells = <0x1>;
+
+				/* COMA */
+				ts16550@3f8 {
+					compatible = "technologic,ts16550";
+
+					reg = <0x3f8 8>;
+					interrupt-parent = <&fpga_intc>;
+					interrupts = <15 IRQ_TYPE_LEVEL_HIGH>;
+				};
+
+				/* COMB */
+				ts16550@2f8 {
+					compatible = "technologic,ts16550";
+
+					reg = <0x2f8 8>;
+					interrupt-parent = <&fpga_intc>;
+					interrupts = <15 IRQ_TYPE_LEVEL_HIGH>;
+				};
+
+				/* COMC */
+				ts16550@3e8 {
+					compatible = "technologic,ts16550";
+
+					reg = <0x3e8 8>;
+					interrupt-parent = <&fpga_intc>;
+					interrupts = <15 IRQ_TYPE_LEVEL_HIGH>;
+				};
+
+				/* COMD */
+				ts16550@2e8 {
+					compatible = "technologic,ts16550";
+
+					reg = <0x2e8 8>;
+					interrupt-parent = <&fpga_intc>;
+					interrupts = <15 IRQ_TYPE_LEVEL_HIGH>;
+				};
 			};
 		};
 
